@@ -57,7 +57,7 @@ a img {
   border: none;
 }
 
-/* line 17, ../sass/screen.sass */
+/* line 22, ../sass/screen.sass */
 body.bp {
   line-height: 1.5;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -493,14 +493,138 @@ form.bp form.inline p {
   margin-bottom: 0;
 }
 
-/* line 31, ../sass/screen.sass */
+/* line 35, ../sass/screen.sass */
+body.one-col #container {
+  width: 950px;
+  margin: 0 auto;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 37, ../sass/screen.sass */
+body.one-col #header, body.one-col #authors, body.one-col #footer, body.one-col footer {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 950px;
+}
+/* line 147, ../../../.rvm/gems/ruby-1.9.2-p180@backbone-site/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html body.one-col #header, * html body.one-col #authors, * html body.one-col #footer, * html body.one-col footer {
+  overflow-x: hidden;
+}
+/* line 39, ../sass/screen.sass */
+body.one-col #content {
+  padding-left: 200px;
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 550px;
+  padding-right: 200px;
+}
+/* line 147, ../../../.rvm/gems/ruby-1.9.2-p180@backbone-site/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html body.one-col #content {
+  overflow-x: hidden;
+}
+
+/* line 44, ../sass/screen.sass */
+#authors {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 950px;
+}
+/* line 147, ../../../.rvm/gems/ruby-1.9.2-p180@backbone-site/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #authors {
+  overflow-x: hidden;
+}
+/* line 46, ../sass/screen.sass */
+#authors ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 60, ../../../.rvm/gems/ruby-1.9.2-p180@backbone-site/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+#authors ul li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0px;
+  white-space: nowrap;
+  display: inline;
+  float: left;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+/* line 48, ../../../.rvm/gems/ruby-1.9.2-p180@backbone-site/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+#authors ul li:first-child, #authors ul li.first {
+  padding-left: 0;
+}
+/* line 49, ../../../.rvm/gems/ruby-1.9.2-p180@backbone-site/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+#authors ul li:last-child {
+  padding-right: 0;
+}
+/* line 50, ../../../.rvm/gems/ruby-1.9.2-p180@backbone-site/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+#authors ul li.last {
+  padding-right: 0;
+}
+
+/* line 49, ../sass/screen.sass */
+#marketing {
+  overflow: hidden;
+  *zoom: 1;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -o-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -khtml-border-radius: 15px;
+  border-radius: 15px;
+  -moz-box-shadow: 5px 5px 5px orange;
+  -webkit-box-shadow: 5px 5px 5px orange;
+  -o-box-shadow: 5px 5px 5px orange;
+  box-shadow: 5px 5px 5px orange;
+  border: 3px solid black;
+  padding: 25px;
+  font-size: 16px;
+}
+/* line 57, ../sass/screen.sass */
+#marketing h1 {
+  font-weight: bold;
+  margin: 0px;
+  font-size: 2em;
+}
+/* line 61, ../sass/screen.sass */
+#marketing h2 {
+  font-size: 1.5em;
+}
+
+/* line 64, ../sass/screen.sass */
+#mailing-list {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* line 68, ../sass/screen.sass */
+.title {
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: orange 2px 2px 5px;
+}
+
+/* line 73, ../sass/screen.sass */
+footer {
+  text-shadow: rgba(255, 255, 255, 0.2) -1px -1px 0;
+  margin-top: 80px;
+  text-align: center;
+}
+
+/* line 81, ../sass/screen.sass */
 body.two-col #container {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 33, ../sass/screen.sass */
+/* line 83, ../sass/screen.sass */
 body.two-col #header, body.two-col #footer {
   display: inline;
   float: left;
@@ -511,7 +635,7 @@ body.two-col #header, body.two-col #footer {
 * html body.two-col #header, * html body.two-col #footer {
   overflow-x: hidden;
 }
-/* line 35, ../sass/screen.sass */
+/* line 85, ../sass/screen.sass */
 body.two-col #sidebar {
   display: inline;
   float: left;
@@ -522,7 +646,7 @@ body.two-col #sidebar {
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 39, ../sass/screen.sass */
+/* line 89, ../sass/screen.sass */
 body.two-col #content {
   display: inline;
   float: left;

@@ -1,3 +1,8 @@
+@import "compass/css3/text-shadow"
+@import "compass/css3/border-radius"
+@import "compass/css3/box-shadow"
+@import "compass/typography/lists/horizontal-list"
+
 // This import applies a global reset to any page that imports this stylesheet.
 @import blueprint/reset
 // To configure blueprint, edit the partials/base.sass file.
@@ -25,6 +30,51 @@ form.bp
   +blueprint-form
   // You'll probably want to remove the scaffolding once you start styling your site.
   +blueprint-scaffolding
+
+body.one-col
+  #container
+    +container
+  #header, #authors, #footer, footer
+    +column($blueprint-grid-columns)
+  #content
+    +prepend(5)
+    +column(14,true)
+    +append(5)
+
+#authors
+  +column(24, true)
+  ul
+    +horizontal-list
+
+#marketing
+  +clearfix
+  +border-radius(15px)
+  +single-box-shadow(orange, 5px, 5px)
+  border: 3px solid black
+  padding: 25px
+  font-size: 16px
+
+  h1
+    font-weight: bold
+    margin: 0px
+    font-size: 2em
+  h2
+    font-size: 1.5em
+
+#mailing-list
+  margin-top: 20px
+  font-size: 18px
+
+.title
+  font-weight: bold
+  font-style: italic
+  +single-text-shadow(orange, 2px, 2px, 5px)
+
+footer
+  +text-shadow(rgba(white, .2) -1px -1px 0)
+  margin-top: 80px
+  text-align: center
+
 
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 body.two-col
