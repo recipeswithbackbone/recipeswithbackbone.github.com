@@ -2,20 +2,52 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-
   <title>{{ page.title }}</title>
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-  <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
-  <!--[if IE]>
-      <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-  <![endif]-->
+  <link href="/stylesheets/bootstrap-1.1.1.css" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+    .container {
+      width: 580px;
+    }
+  </style>
+  <meta name="viewport" content="width=600"/>
 </head>
-<body class="bp one-col">
-  <div id="container">
-    <div id="content">
-{{ content }}
+<body style="padding-top: 60px">
+  <div class="topbar-wrapper" style="z-index:5;">
+    <div class="topbar">
+      <div class="fill">
+        <div class="container span10">
+          <h3><a href="/">Recipes with Backbone</a></h3>
+          <ul>
+            <li class='active'><a href="/">Home</a></li>
+            <li><a href="http://ngauthier.com">Gauthier</a></li>
+            <li><a href="http://eeecomputes.com">Strom</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-  <footer>Copyright 2011 <a href="http://www.ngauthier.com/">Nick Gauthier</a> and <a href="http://eeecomputes.com">Chris Strom</a></footer>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="span10">
+        {{ content }}
+      </div>
+    </div>
+    <div class="row">
+      <hr class="span10">
+      <div class="span10">
+        <a href="http://twitter.com/backbonerecipes" class='btn small primary'>Follow backbonerecipes on twitter</a>
+        <a href="http://twitter.com/ngauthier" class='btn small'>Follow @ngauthier on twitter</a>
+        <a href="http://twitter.com/eee_c" class='btn small'>Follow @eee_c on twitter</a>
+      </div>
+      <div class="span9" style="margin-top: 10px">
+        &copy; 2011
+        <a href="http://www.ngauthier.com/">Nick Gauthier</a>
+        and
+        <a href="http://eeecomputes.com">Chris Strom</a>
+      </div>
+    </div>
   </div>
 </body>
 </html>
+
+
