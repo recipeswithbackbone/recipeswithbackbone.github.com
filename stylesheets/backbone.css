@@ -1,0 +1,142 @@
+html, body {
+  color: #141414;
+  background-color: #141414;
+  font-size: 16px;
+}
+
+body {
+  width: 600px;
+  margin: auto;
+}
+
+a, a:visited, a:hover {
+  color: #D6482C;
+  text-decoration: underline;
+}
+
+#content {
+  background-color: white;
+}
+
+.top-border-one {
+  background-color: #000;
+  height: 10px;
+}
+
+.top-border-two {
+  background-color: #ebedec;
+  height: 14px;
+}
+
+h1 {
+  text-transform: uppercase;
+  background-color: #93c13b;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+h1 .recipes {
+  color: white;
+  font-size: 80px;
+}
+
+h1 .backbone {
+  color: black;
+  font-size: 104px;
+}
+
+h2 {
+  color: #4a4a4a;
+  background-color: #ebedec;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+h2 .three, h2 .four {
+  font-size: 36px;
+}
+
+h2 .four {
+  color: #93c13b;
+}
+
+.mailing-list {
+  padding-top: 14px;
+  padding-bottom: 20px;
+  background-color: #000;
+  color: #93c13b;
+  font-size: 14px;
+}
+
+.mailing-list p {
+    margin-bottom: 0;
+}
+
+.mailing-list p.sign-up {
+  text-align: center;
+}
+
+.mailing-list a, .mailing-list a:visited, .mailing-list a:hover {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.inner-content {
+  padding: 10px 0px 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #000;
+  color: #93c13b;
+  float:left;
+  width: 380px;
+  height: 260px;
+}
+.spine {
+  padding: 10px 20px 10px 0;
+  float: left;
+  width: 180px;
+  height: 260px;
+  background-color: #000;
+  color: #93c13b;
+  position: relative;
+}
+.spine p {
+  margin: 0;
+  padding: 0;
+  width: 260px;
+  font-size: 140px;
+  position: absolute;
+  right: -50px;
+  top: 50px;
+  font-weight: bold;
+  letter-spacing: -26px;
+  -webkit-transform: rotate(90deg); 
+  -moz-transform: rotate(90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+
+h3.authors, .links, .copyright {
+  color: #4a4a4a;
+  background-color: #ebedec;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+h3.authors {
+  clear:both;
+  font-size: 42px;
+}
+
+h3.authors .lastname {
+  font-weight: bold;
+}
+
+.links a {
+  font-size: 13px;
+  margin: 0 10px;
+}
+.copyright {
+  margin-bottom: 20px;
+}
