@@ -75,8 +75,7 @@ h3.thanks {
 }
 
 .mailing-list {
-  padding-top: 14px;
-  padding-bottom: 20px;
+  padding: 14px 20px 20px;
   background-color: #000;
   color: #93c13b;
   font-size: 14px;
@@ -142,7 +141,7 @@ h3.authors .lastname {
 }
 
 .links a {
-  font-size: 13px;
+  font-size: 12px;
   margin: 0 10px;
 }
 .copyright {
