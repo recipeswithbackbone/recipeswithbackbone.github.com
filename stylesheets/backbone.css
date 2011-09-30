@@ -65,6 +65,15 @@ h2 .four {
   color: #93c13b;
 }
 
+h3 {
+  text-align: center;
+  color: #93c13b;
+}
+
+h3.thanks {
+  font-size: 48px;
+}
+
 .mailing-list {
   padding-top: 14px;
   padding-bottom: 20px;
