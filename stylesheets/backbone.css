@@ -70,10 +70,6 @@ h3 {
   color: #93c13b;
 }
 
-h3.thanks {
-  font-size: 48px;
-}
-
 .mailing-list {
   padding: 14px 20px 20px;
   background-color: #000;
@@ -202,4 +198,14 @@ h3.authors .lastname {
 }
 .buy a:focus {
   outline: 1px dotted #666;
+}
+
+h3.thanks {
+  font-size: 48px;
+  margin-bottom: 5px;
+}
+
+p.thanks-tweet {
+  text-align:center;
+  margin-bottom: 10px;
 }
