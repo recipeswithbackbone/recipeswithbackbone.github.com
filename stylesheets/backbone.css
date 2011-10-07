@@ -38,12 +38,16 @@ h1 {
   margin-bottom: 0;
 }
 
-h1 .recipes {
+h1 a, h1 a:hover, h1 a:visited {
+  text-decoration: none;
+}
+
+h1 .recipes a {
   color: white;
   font-size: 80px;
 }
 
-h1 .backbone {
+h1 .backbone a {
   color: black;
   font-size: 104px;
 }
@@ -91,16 +95,17 @@ h3 {
 }
 
 .left-column {
-  padding: 10px 0px 10px 20px;
+  padding: 10px 10px 10px 20px;
   float:left;
-  width: 380px;
-  height: 260px;
+  width: 370px;
+  height: 280px;
+  overflow: auto;
 }
 .spine {
   padding: 10px 20px 10px 0;
   float: left;
   width: 180px;
-  height: 260px;
+  height: 280px;
   background-color: #000;
   color: #93c13b;
   position: relative;
