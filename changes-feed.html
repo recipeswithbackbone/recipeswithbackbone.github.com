@@ -1,0 +1,121 @@
+---
+layout: backbone
+title: Changes Feed
+---
+    <div id="inner-content">
+      <div class="section" lang="en" xml:lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a id="_changes_feed"></a>Changes Feed</h2></div></div></div>
+<div class="section" lang="en" xml:lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_the_problem_7"></a>The problem</h3></div></div></div>
+<p>The user of a web application is not always the only person (or thing) modifying the underlying data.  For example, in our calendar application, multiple users could be modifying appointments on the calendar at the same time.  An obvious solution to this issue would be periodically running <code class="literal">fetch</code> on our collections to make sure they are up-to-date.  However, this solution has a few problems because a full fetch may:</p>
+<div class="orderedlist"><ol type="1">
+<li>
+Be a slow operation on the server
+</li>
+<li>
+Re-render a large number of views
+</li>
+<li>
+Incur a large amount of client-side processing
+</li>
+<li>
+Disrupt the browser with a large number of changes
+</li>
+</ol></div>
+<p>A much better solution would be a changes feed that will only send what has changed since the last time we checked.</p>
+</div>
+<div class="section" lang="en" xml:lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_changes_feed_on_a_collection"></a>Changes feed on a Collection</h3></div></div></div>
+<p>Since Collections are responsible for adding, changing, and destroying Models, they are an ideal place for a changes feed.  Let’s look at how we would implement a changes feed for our calendar:</p>
+<pre class="programlisting">Calendar.AppointmentChanges = new (Calendar.Appointments.extend({
+  initialize: function(options) {
+    _.bindAll(this, 'changes', 'processChanges', 'processChange');
+    this.bind('refresh', 'processChanges');
+    setInterval(this.changes, 15*1000);
+  },
+
+  since: function() {
+    return Calendar.Appointments.max(function(appointment) {
+      return appointment.get('updated_at');
+    });
+  },
+
+  changes: function() {
+    this.fetch({ data: { since: this.since() } });
+  },
+
+  processChanges: function() {
+    this.each(this.processChange);
+  },
+
+  processChange: function(appointment) {
+    var existing = Calendar.Appointments.get(appointment.id);
+    if (existing) {
+      if (appointment.get('deleted')) {
+        Calendar.Appointments.remove(existing);
+      } else {
+        existing.set(appointment.attributes);
+      }
+    } else {
+      Calendar.Appointments.add(appointment)
+    }
+  }
+}))</pre>
+<p>First of all, we’re extending <code class="literal">Calendar.Appointments</code>, which is a singleton Collection containing our appointments.</p>
+<pre class="programlisting">Calendar.AppointmentChanges = new (Calendar.Appointments.extend({
+  // ...
+}));</pre>
+<p>This means that we inherit the URL from <code class="literal">Calendar.Appointments</code>.  The URL in that collection is just a normal <code class="literal">index</code> call on the <code class="literal">/appointments</code> route.  In our singleton, however, we use the <code class="literal">since</code> method to call <code class="literal">fetch</code> with a <code class="literal">since=</code> parameter.  This instructs the server to only return appointments since that point in time.</p>
+<p>The <code class="literal">since</code> method simply gets the maximum <code class="literal">updated_at</code> timestamp from all of our appointments and sends that to the server.</p>
+<pre class="programlisting">  since: function() {
+    return Calendar.Appointments.max(function(appointment) {
+      return appointment.get('updated_at');
+    });
+  }</pre>
+<p>If we have no appointments, <code class="literal">since</code> will be <code class="literal">''</code>.  In that case, the server will treat it like a normal index call.</p>
+<p>We also setup a 15 second interval to call the changes method. Thus, we are continuously polling the server for changes:</p>
+<pre class="programlisting">Calendar.AppointmentChanges = new (Calendar.Appointments.extend({
+  initialize: function(options) {
+    _.bindAll(this, 'changes', 'processChanges', 'processChange');
+    this.bind('refresh', 'processChanges');
+    setInterval(this.changes, 15*1000);
+  },
+  // ...
+}));</pre>
+<p>If the polling call emits a <span class="emphasis"><em>refresh</em></span> event, we run the <code class="literal">processChanges</code> method.</p>
+<p>At this point, out changes collection is populated with a bunch of <code class="literal">Appointment</code> objects (because we inherited from <code class="literal">Calendar.Appointments</code>).  These appointments represent <code class="literal">Appointments</code> that have changed since the timestamp.  The <code class="literal">processChanges</code> method is simply an iterator that calls <code class="literal">processChange</code> on each <code class="literal">Appointment</code>.</p>
+<pre class="programlisting">  processChange: function(appointment) {
+    var existing = Calendar.Appointments.get(appointment.id);
+    if (existing) {
+      if (appointment.get('deleted')) {
+        Calendar.Appointments.remove(existing);
+      } else {
+        existing.set(appointment.attributes);
+      }
+    } else {
+      Calendar.Appointments.add(appointment)
+    }
+  }</pre>
+<p><code class="literal">processChange</code> performs the following actions:</p>
+<div class="orderedlist"><ol type="1">
+<li>
+Search our <code class="literal">Appointments</code> collection to see if we already have the <code class="literal">Appointment</code> in our system
+</li>
+<li>
+If we have the <code class="literal">Appointment</code>, check to see if it has been deleted (we would implement this server side with a <code class="literal">deleted</code> boolean), and if it has, remove if from our main collection
+</li>
+<li>
+If it has not been deleted, <code class="literal">set</code> its attributes to the new ones from the server, because some attribute change has occurred
+</li>
+<li>
+If we do not have an existing <code class="literal">Appointment</code>, it means it is new and needs to be added to our collection
+</li>
+</ol></div>
+<p>The great thing about this changes feed is that it is so simple.  All we have to do is propagate the change to a corresponding <code class="literal">add</code>, <code class="literal">update</code>, or <code class="literal">destroy</code> call on the model or collection.  None of our code needs to know that a changes feed even exists!  Also, <code class="literal">AppointmentChanges</code> only needs to know about <code class='literal'>Calendar.Appointments</code>—nothing about views, the router or anything else!</p>
+</div>
+</div>
+
+</div>
