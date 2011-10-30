@@ -1,6 +1,8 @@
 html, body {
   color: #141414;
-  background-color: #141414;
+  background-color: #000000;
+  background-image: url('/images/brace.png');
+  background-repeat: repeat-y;
   font-size: 16px;
 }
 
@@ -17,8 +19,12 @@ a, a:visited, a:hover {
 #content {
   font-size: 16px;
   font-weight: bold;
-  background-color: #000;
+  background-color: #141414;
   color: #93c13b;
+}
+
+#inner-content {
+  padding: 14px;
 }
 
 .top-border-one {
