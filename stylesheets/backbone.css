@@ -7,7 +7,7 @@ html, body {
 }
 
 body {
-  width: 600px;
+  width: 800px;
   margin: auto;
 }
 
@@ -78,6 +78,7 @@ h2 .four {
 h3 {
   text-align: center;
   color: #93c13b;
+  margin-top: 10px;
 }
 
 .mailing-list {
@@ -98,37 +99,6 @@ h3 {
 .mailing-list a, .mailing-list a:visited, .mailing-list a:hover {
   font-weight: bold;
   font-size: 14px;
-}
-
-.left-column {
-  padding: 10px 10px 10px 20px;
-  float:left;
-  width: 370px;
-  height: 280px;
-  overflow: auto;
-}
-.spine {
-  padding: 10px 20px 10px 0;
-  float: left;
-  width: 180px;
-  height: 280px;
-  background-color: #000;
-  color: #93c13b;
-  position: relative;
-}
-.spine p {
-  margin: 0;
-  padding: 0;
-  width: 260px;
-  font-size: 140px;
-  position: absolute;
-  right: -50px;
-  top: 35px;
-  font-weight: bold;
-  letter-spacing: -26px;
-  -webkit-transform: rotate(90deg); 
-  -moz-transform: rotate(90deg);
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
 }
 
 h3.authors, .links, .copyright {
