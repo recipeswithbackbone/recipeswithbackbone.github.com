@@ -1,0 +1,6 @@
+Recipes with Backbone(.js)
+==========================
+
+This is the public facing repository for http://recipeswithbackbone.com/[Recipes with Backbone]. The best damn Backbone.js book ever.
+
+_Please help_ by adding suggestions and other feedback to our https://github.com/recipeswithbackbone/recipeswithbackbone.github.com/issues[issue tracker]!
