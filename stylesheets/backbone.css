@@ -13,6 +13,13 @@ body {
 
 a, a:visited, a:hover {
   color: #D6482C;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
   text-decoration: underline;
 }
 
@@ -73,6 +80,12 @@ h2 .three, h2 .four {
 
 h2 .four {
   color: #93c13b;
+}
+
+h2 .five {
+  font-size: 20px;
+  color: #D6482C;
+  font-style: italic;
 }
 
 h3 {
