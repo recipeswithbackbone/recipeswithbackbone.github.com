@@ -88,6 +88,12 @@ h2 .five {
   font-style: italic;
 }
 
+h2 .five .updated {
+  background-color: #FFFF54;
+  padding: 0px 5px;
+}
+
+
 h3 {
   text-align: center;
   color: #93c13b;
@@ -143,7 +149,7 @@ h3.authors .lastname {
   text-align: center;
   margin-bottom: 20px;
   background-color: #ebedec;
-  color: #4a4a4a;
+  color: black;
   font-size: 18px;
   padding: 10px 20px;
 }
@@ -153,29 +159,31 @@ h3.authors .lastname {
 }
 
 .buy a, .buy a:visited {
+  color: white;
   font-size: 26px;
   text-decoration: none;
 
   /* ripped from twitter bootstrap */
   cursor: pointer;
   display: inline-block;
-  background-color: #e6e6e6;
+  background-color: #DC143C;
   background-repeat: no-repeat;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
-  background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
-  background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
-  padding: 5px 14px 6px;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff0000), color-stop(25%, #ff0000), to(#DC143C));
+  background-image: -webkit-linear-gradient(#ff0000, #ff0000 25%, #DC143C);
+  background-image: -moz-linear-gradient(top, #ff0000, #ff0000 25%, #DC143C);
+  background-image: -ms-linear-gradient(#ff0000, #ff0000 25%, #DC143C);
+  background-image: -o-linear-gradient(#ff0000, #ff0000 25%, #DC143C);
+  background-image: linear-gradient(#ff0000, #ff0000 25%, #DC143C);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0000', endColorstr='#DC143C', GradientType=0);
+  margin: 15px 0px;
+  padding: 15px 20px 18px;
+  text-shadow: 0 1px 1px rgba(51, 51, 51, 0.75);
   line-height: normal;
   border: 1px solid #ccc;
   border-bottom-color: #bbb;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -186,9 +194,7 @@ h3.authors .lastname {
   transition: 0.1s linear all;
 }
 .buy a:hover {
-  background-position: 0 -15px;
-  color: #FF0000;
-  text-decoration: none;
+  text-shadow: 0 4px 4px rgba(51, 51, 51, 0.75);
 }
 .buy a:focus {
   outline: 1px dotted #666;
